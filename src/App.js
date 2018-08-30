@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
 
 import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom'
 import styled from 'styled-components';
 
-import MessageWriter from './routes/MessageWriter';
+import MessageWriter from './routes/MessageWriter'
 
 const PageWrapper = styled.div`
   height: 100vw;
