@@ -10,8 +10,5 @@ app.use(bodyParser.json());
 
 const db  = mongoose.connect('mongodb://localhost:27017/myapp');
 
-app.put('/api/sendmessage', (req, res) => {
-
-});
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
