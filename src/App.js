@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import styled from 'styled-components';
 
 import MessageWriter from './routes/MessageWriter'
 
 const PageWrapper = styled.div`
-  height: 100vw;
+  height: 100vh;
   width: 100%;
   background-color: white;
   color: black;
