@@ -9,6 +9,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 const db  = mongoose.connect('mongodb://localhost:27017/myapp');
+console.log('testing express server');
+console.log(db);
 
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
