@@ -6,6 +6,7 @@ class Writer extends Component {
     super();
     this.state = {
       messageValue: '',
+      fromValue: '',
     };
   }
 
@@ -16,23 +17,28 @@ class Writer extends Component {
     })
   };
 
+  handleFromChange = (e) => {
+    this.setState({
+      fromValue: e.target.value
+    })
+  };
+
   handleKeyPress = (e) => {
     if (e.key === 'Enter' || e.key === 'enter') e.preventDefault();
   };
 
-  handleMessageSubmit = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault();
-    if (!this.state.messageValue) return;
-    let messageToPost = encodeURIComponent(this.state.messageValue);
-    console.log('message sending');
-    console.log(messageToPost);
+    this.props.handleMessageSubmit(this.state.messageValue, this.state.fromValue)
   };
 
   render() {
     return(
-      <MessageForm onSubmit={this.handleMessageSubmit}>
+      <MessageForm onSubmit={this.handleSubmit}>
         <MessageFromWho type={'text'}
-                     placeholder={'From: anonymous'}/>
+                        onChange={this.handleFromChange}
+                        placeholder={'From: anonymous'}
+                        value={this.state.fromValue}/>
         <MessageInput placeholder={'Write your message'}
                       onChange={this.handleChange}
                       onKeyPress={this.handleKeyPress}
@@ -60,6 +66,10 @@ const MessageFromWho = styled.input`
   color: black;
   width: 90vw;
   max-width: 100%;
+  
+  &:hover, &:focus {
+    outline: none;
+  }
 `;
 
 const MessageInput = styled.textarea`
@@ -69,8 +79,9 @@ const MessageInput = styled.textarea`
   max-width: 100%;
   padding: 0.5rem 0.5rem 2.5rem 0.5rem;
   display: block;
-  height: 80vh;
+  height: 85vh;
   width: 90vw;
+  
   
   &:hover, &:focus {
     outline: none;
