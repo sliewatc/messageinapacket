@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom'
-import styled from 'styled-components';
+import styled from 'react-emotion';
 
 import MessageWriter from './routes/MessageWriter'
 import IncomingMessage from './routes/IncomingMessage'
@@ -24,7 +24,7 @@ class App extends Component {
   }
 }
 
-const PageWrapper = styled.div`
+const PageWrapper = styled('div')`
   height: 100vh;
   width: 100%;
   background-color: white;

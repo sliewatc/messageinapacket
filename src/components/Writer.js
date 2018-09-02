@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled from 'react-emotion';
 
 class Writer extends Component {
   constructor() {
@@ -52,12 +52,12 @@ class Writer extends Component {
   }
 }
 
-const MessageForm = styled.form`
+const MessageForm = styled('form')`
   position: relative;
   box-shadow: 5px 5px 0 black;
 `;
 
-const MessageFromWho = styled.input`
+const MessageFromWho = styled('input')`
   font-size: 2rem;
   font-family: monospace;
   border: solid black;
@@ -72,7 +72,7 @@ const MessageFromWho = styled.input`
   }
 `;
 
-const MessageInput = styled.textarea`
+const MessageInput = styled('textarea')`
   font-size: 2rem;
   border-radius: 0;
   border: 2px solid black;
@@ -88,7 +88,7 @@ const MessageInput = styled.textarea`
   }
 `;
 
-const MessageSubmit = styled.input`
+const MessageSubmit = styled('input')`
   position: absolute;
   bottom: 0;
   right: 0;
@@ -108,7 +108,7 @@ const MessageSubmit = styled.input`
   }
 `;
 
-const MessageCharacterCounter = styled.div`
+const MessageCharacterCounter = styled('div')`
   position: absolute;
   bottom: 0.5rem;
   left: 1rem;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled from 'react-emotion';
 import Writer from '../components/Writer';
 import axios from 'axios';
 
@@ -7,13 +7,13 @@ class MessageWriter extends Component {
   handleMessageSubmit = (message, from) => {
     if (!message) return;
     let messageToPost = encodeURIComponent(message);
-    console.log(messageToPost);
+    let fromToPost = encodeURIComponent(from);
 
     axios({
       url: '/api/sendmessage',
       method: 'PUT',
       data: {
-        from,
+        from: fromToPost,
         message: messageToPost,
       }
     }).then((resp) => {
@@ -35,7 +35,7 @@ class MessageWriter extends Component {
   }
 }
 
-const WriterWrapper = styled.div`
+const WriterWrapper = styled('div')`
   height: 100vh;
   width: 100%;
   display: flex;
