@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-// const Message = require('./schemas/MessageSchema');
 
 const app = express();
 const port = 5000;
